@@ -6,6 +6,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import pool from './db.js';
 import authenticate from './api/middleware/auth.js';
+import e from 'express';
+import App from '../frontend/src/App.jsx';
 
 dotenv.config();
 
@@ -127,5 +129,5 @@ app.patch('/api/mahasiswa/:id/toggle', authenticate, async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+export default App;
